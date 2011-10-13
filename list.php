@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="<?php echo plugins_url('style.css', __FILE__); ?>" type="text/css" />
+
+<?php if(isset($jobs['jobs']['job']) && count($jobs['jobs']['job']) && $jobs['jobs']['job']): ?>
+
+	<!-- SmartRecruiters Jobs List -->
+	
+	<ul class="smartrecruitersJobList">
+	
+		<?php foreach($jobs['jobs']['job'] as $job): ?>
+		
+			<?php if((count($locations) && in_array($job['job-location']['city'], $locations)) || !count($locations)): ?>
+				
+				<?php if((count($departments) && in_array($job['department'], $departments)) || !count($departments)): ?>
+			
+					<li class="smartrecruitersJobListElement">
+							<h2 class="smartrecruitersJobListElementHeader">
+								<a href="<?php echo $guid.'&srjob='.$job['@attributes']['code']; ?>" title="<?php echo $job['title']; ?>"><?php echo $job['title']; ?></a>
+							</h2>
+							
+							<?php if(isset($job['job-location']['city']) && $job['job-location']['city']): ?>
+								<ul class="smartrecruitersJobListDetails">
+									<li class="smartrecruitersJobListDetailsElement"><?php echo $job['job-location']['city']; ?></li>
+								</ul>
+							<?php endif; ?>
+							
+						</li>
+				
+				<?php endif; ?>
+				
+			<?php endif; ?>
+			
+		<?php endforeach; ?>
+		
+	</ul>
+	
+	<!-- /SmartRecruiters Jobs List -->
+	
+<?php endif; ?>
