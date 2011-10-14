@@ -10,7 +10,7 @@ Tags: jobs, career, ats, recruitment, recruiting, smartrecruiters
 
 The easiest way to post jobs and manage applicants in a WordPress site.
 
-Job Manager is the cool and easy plugin to display relevant jobs on any web page. Job Manager connects with your SmartRecruiters Recruiting Software to automate job posting and candidate management
+Job Manager is the cool and easy plugin to display relevant jobs on any page. Job Manager connects with your SmartRecruiters Recruiting Software to automate job posting and candidate management.
 
 Jobs posted from your SmartRecruiters Software will automatically be displayed in your WordPress site.
 
@@ -26,7 +26,7 @@ Job Manager is easy to [install](http://dev.smartrecruiters.com/?page_id=23) and
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Go to 'Job Manager by SmartRecruiters' in 'Plugins' section.
 4. Connect plugin with your SmartRecruiters account typing your email and password. If you don't have SmartRecruiters account - [signup](http://www.smartrecruiters.com/static/sign-up/?cr1=wordpressplugin) for free.
-5. Generate hashcode and paste it to post or page content.
+5. Generate hashcode (`#smartrecruiters_jobs_list`) and paste it to post or page content. See [concept](http://dev.smartrecruiters.com/?page_id=45) and [styling](http://dev.smartrecruiters.com/?page_id=65) for more info.
 6. That's it!
 
 == Changelog ==
