@@ -25,7 +25,7 @@ Job Manager is easy to [install](http://dev.smartrecruiters.com/?page_id=23) and
 1. Use the automatic installer or FTP client to upload plugin to 'wp-content/plugins' directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Go to 'Job Manager by SmartRecruiters' in 'Plugins' section.
-4. Connect plugin with your SmartRecruiters account typing your email and password. If you don't have SmartRecruiters account - [signup](http://www.smartrecruiters.com/static/sign-up/?cr1=wordpressplugin) for free.
+4. Connect plugin with your SmartRecruiters account typing your email and password. If you don't have SmartRecruiters account - [signup](http://www.smartrecruiters.com/static/wordpress_signup) for free.
 5. Generate hashcode (`#smartrecruiters_jobs_list`) and paste it to post or page content. See [concept](http://dev.smartrecruiters.com/?page_id=45) and [styling](http://dev.smartrecruiters.com/?page_id=65) for more info.
 6. That's it!
 
