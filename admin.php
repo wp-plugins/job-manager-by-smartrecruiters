@@ -23,7 +23,8 @@
 					//rozlaczyc i odswiezyc strone zeby pokazac formularz logowania
 					update_option('sr_connected', 0);
 					update_option('sr_company', null);
-					header('Location: plugins.php?page=smartrecruiters-config');
+					$location = 'http://'.$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+					echo '<script>window.location = "'.$location.'";</script>';
 			}
 			
 			//pobieramy joby zeby meic departmenty i lokacje
@@ -43,7 +44,7 @@
 				update_option('sr_connected', 1);
 				update_option('srcompany', $_GET['srcompany']);
 				$location = 'http://'.$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-				header('Location: '.$location);
+				echo '<script>window.location = "'.$location.'";</script>';
 			}
 			
 			
