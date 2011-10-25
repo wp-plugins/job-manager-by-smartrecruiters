@@ -29,6 +29,10 @@ Job Manager is easy to [install](http://dev.smartrecruiters.com/?page_id=23) and
 5. Generate hashcode (`#smartrecruiters_job_list`) and paste it to post or page content. See [concept](http://dev.smartrecruiters.com/?page_id=45) and [styling](http://dev.smartrecruiters.com/?page_id=65) for more info.
 6. That's it!
 
+== Frequently Asked Questions ==
+
+If you have any questions or issues please visit our [support forum](http://getsatisfaction.com/smartrecruiters/products/smartrecruiters_wordpress_plugin).
+
 == Changelog ==
 
 = 1.0.1 =
