@@ -9,16 +9,60 @@ Tags: jobs, career, ats, recruitment, recruiting, smartrecruiters
 == Description ==
 
 The easiest way to post jobs and manage applicants in a WordPress site.
+Connects with SmartRecruiters, the free Open SaaS recruiting software.
 
-Job Manager is the cool and easy plugin to display relevant jobs on any page. Job Manager connects with your SmartRecruiters Recruiting Software to automate job posting and candidate management.
+Main functionalities include:
 
-Jobs posted from your SmartRecruiters Software will automatically be displayed in your WordPress site.
+Job Listing
 
-Applicants can easily apply online, upload a resume, or use their LinkedIn or Facebook profiles. All applicants are consolidated within a single web interface in order to easily manage them through the entire hiring process.
+* Display a job list in any page and control/filter through categories and location
+* Leverage your existing style sheet to display Job List and Job Ad
+* Additional Job Widget to display jobs on other sites.
 
-Job Manager leverages your existing style sheet and lets you filter jobs listed by location and department. This allows you to display the relevant jobs on the right web pages, while maintaining your brand.
+Job Management
 
-Job Manager is easy to [install](http://dev.smartrecruiters.com/?page_id=23) and only requires a SmartRecruiters account. SmartRecruiters is the Open Recruiting Software that is entirely free. Sign up [here](http://www.smartrecruiters.com/static/wordpress_signup).
+* Create, post and manage jobs in an easy interface.
+* Copy jobs, put them on-hold, automatically unposts when job is filled
+* Assign Jobs to department and report consolidated progress
+* Give Hiring Team (Manager, HR, …) access to manage jobs and candidates in an intuitive interface.
+
+Job Posting
+
+* Jobs are automatically cross-posted to leading free sites and aggregators like Indeed, SimplyHired, Bright, Trovit, JobRapido,…
+* Facebook App to add a Careers Tab to your Corporate Facebook page. The best way to turn fans into hires
+* Social Recruiting integration with Linkedin, Facebook, Twitter to share jobs with your network and generate referrals
+* One-click posting to leading paid Job Boards such as Monster, Careerbuilder, Dice, Craigslist…
+
+Online Application
+
+* People apply online using an application form that you can configure
+* Includes “Apply With LinkedIn” or “Apply with Facebook” functionalities
+* Also has resume parsing technology which reads a resume (word, pdf,..) and fills in the form on behalf of applicant.
+* People can attach documents (resume, letter, portfolio…), which are all indexed and become searchable in your candidate pool.
+* Includes EEO and veteran information collected confidentially
+* Automatic acknowledgement email with personalized fields (Dear John,…)
+* General Application for people to drop a resume without applying to a specific role
+
+Applicant Tracking 
+
+* All applicants (from all sources) are consolidated within a single web interface in order to easily manage them through the entire hiring process.
+* Email notification when you receive a new applicant
+* One-click actions to Invite, Share, Reject or Contact candidates with easy predefined communication templates
+* Easy tracking of Applicants through the process with clear stages (New, In-Review, Interview, Offer, Offer Accepted, Hired)
+* Share Applicants with other team members, Write reviews and ratings to reach collaborative decision.
+* Extend Offer Letters and manage offer acceptance through onboarding
+* Keep all resumes in a searchable database and start building talent pools for your company.
+
+Other
+
+* Powerful reporting capabilities to measure and optimize your recruiting efforts
+* SmartRecruiters Open SaaS application is hosted and maintained. No need to worry about hosting, security, performance,… 
+* Secured https connection for Online Application and access to Candidate Details (a legal must)
+* Smart security model with multiple user roles allows to control who has access to which jobs and candidates. 
+
+Job Manager by SmartRecruiters should be easy to [install](http://dev.smartrecruiters.com/?page_id=23) and use. We’d love to [hear from you](http://getsatisfaction.com/smartrecruiters/products/smartrecruiters_wordpress_plugin) if you have any issues, questions or ideas.
+
+If you don’t have a SmartRecruiters account yet, you can sign up [here](http://www.smartrecruiters.com/static/wordpress_signup) (it is entirely free forever). 
 
 == Installation ==
 
