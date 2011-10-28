@@ -24,23 +24,23 @@ Job Management
 * Create, post and manage jobs in an easy interface.
 * Copy jobs, put them on-hold, automatically unposts when job is filled
 * Assign Jobs to department and report consolidated progress
-* Give Hiring Team (Manager, HR, …) access to manage jobs and candidates in an intuitive interface.
+* Give Hiring Team (Manager, HR, ...) access to manage jobs and candidates in an intuitive interface.
 
 Job Posting
 
-* Jobs are automatically cross-posted to leading free sites and aggregators like Indeed, SimplyHired, Bright, Trovit, JobRapido,…
+* Jobs are automatically cross-posted to leading free sites and aggregators like Indeed, SimplyHired, Bright, Trovit, JobRapido, ...
 * Facebook App to add a Careers Tab to your Corporate Facebook page. The best way to turn fans into hires
 * Social Recruiting integration with Linkedin, Facebook, Twitter to share jobs with your network and generate referrals
-* One-click posting to leading paid Job Boards such as Monster, Careerbuilder, Dice, Craigslist…
+* One-click posting to leading paid Job Boards such as Monster, Careerbuilder, Dice, Craigslist...
 
 Online Application
 
 * People apply online using an application form that you can configure
-* Includes “Apply With LinkedIn” or “Apply with Facebook” functionalities
+* Includes Ã¢â‚¬Å›Apply With LinkedInÃ¢â‚¬Å¥ or Ã¢â‚¬Å›Apply with FacebookÃ¢â‚¬Å¥ functionalities
 * Also has resume parsing technology which reads a resume (word, pdf,..) and fills in the form on behalf of applicant.
-* People can attach documents (resume, letter, portfolio…), which are all indexed and become searchable in your candidate pool.
+* People can attach documents (resume, letter, portfolio...), which are all indexed and become searchable in your candidate pool.
 * Includes EEO and veteran information collected confidentially
-* Automatic acknowledgement email with personalized fields (Dear John,…)
+* Automatic acknowledgement email with personalized fields (Dear John, ...)
 * General Application for people to drop a resume without applying to a specific role
 
 Applicant Tracking 
@@ -56,13 +56,13 @@ Applicant Tracking
 Other
 
 * Powerful reporting capabilities to measure and optimize your recruiting efforts
-* SmartRecruiters Open SaaS application is hosted and maintained. No need to worry about hosting, security, performance,… 
+* SmartRecruiters Open SaaS application is hosted and maintained. No need to worry about hosting, security, performance, ... 
 * Secured https connection for Online Application and access to Candidate Details (a legal must)
 * Smart security model with multiple user roles allows to control who has access to which jobs and candidates. 
 
-Job Manager by SmartRecruiters should be easy to [install](http://dev.smartrecruiters.com/?page_id=23) and use. We’d love to [hear from you](http://getsatisfaction.com/smartrecruiters/products/smartrecruiters_wordpress_plugin) if you have any issues, questions or ideas.
+Job Manager by SmartRecruiters should be easy to [install](http://dev.smartrecruiters.com/?page_id=23) and use. WeÃ¢â‚¬â„¢d love to [hear from you](http://getsatisfaction.com/smartrecruiters/products/smartrecruiters_wordpress_plugin) if you have any issues, questions or ideas.
 
-If you don’t have a SmartRecruiters account yet, you can sign up [here](http://www.smartrecruiters.com/static/wordpress_signup) (it is entirely free forever). 
+If you donÃ¢â‚¬â„¢t have a SmartRecruiters account yet, you can sign up [here](http://www.smartrecruiters.com/static/wordpress_signup) (it is entirely free forever). 
 
 == Installation ==
 
