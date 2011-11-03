@@ -3,7 +3,7 @@
 Plugin Name: Job Manager by SmartRecruiters
 Plugin URI: http://dev.smartrecruiters.com
 Description: The easiest way to post jobs and manage applicants in a WordPress site. Connects with SmartRecruiters, the free Open SaaS recruiting software.
-Version: 1.0.1
+Version: 1.0.2
 Author: SmartRecruiters
 Author URI: http://smartrecruiters.com
 License: MIT
@@ -22,13 +22,14 @@ function get_jobs($params = '', $guid){
 	
 	
 	$url = 'https://www.smartrecruiters.com/cgi-bin/WebObjects/share.woa/wa/careersite?wpp_company='.$company_name;
-
-	//pobieramy joby
-	$get_jobs = file_get_contents($url);
 	
-
+	//pobieramy joby
+	$get_jobs = @file_get_contents($url);
+	
+	$xml = @simplexml_load_string($get_jobs, 'SimpleXMLElement', LIBXML_NOCDATA);
+	
 	//konwertujemy to na jakis sensowny obiekt
-	$jobs = json_decode(json_encode(simplexml_load_string($get_jobs, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
+	$jobs = json_decode(json_encode($xml), true);
 	
 	
 	//trzeba wziac pod uwage parametry takei jak location i departments
@@ -124,10 +125,12 @@ function show_job(){
 		$company_name = get_option('srcompany');
 	
 		$url = 'https://www.smartrecruiters.com/cgi-bin/WebObjects/share.woa/wa/careersite?wpp_company=' . $company_name .'&posting=' . $_GET['srjob'];
-	
-		$get_job = file_get_contents($url);
+		$url ="http://dfssfsdf.com";
 		
-		$job = json_decode(json_encode(simplexml_load_string($get_job, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
+		$get_job = @file_get_contents($url);
+		
+		$xml = @simplexml_load_string($get_job, 'SimpleXMLElement', LIBXML_NOCDATA);
+		$job = json_decode(json_encode($xml), true);
 	
 		if(isset($job['jobs']) && count($job['jobs'])){
 	

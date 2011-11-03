@@ -32,8 +32,9 @@
 			$url = 'https://www.smartrecruiters.com/cgi-bin/WebObjects/share.woa/wa/careersite?wpp_company='.$company_name;
 		
 			//pobieramy joby
-			$get_jobs = file_get_contents($url);
-			$jobs = json_decode(json_encode(simplexml_load_string($get_jobs, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
+			$get_jobs = @file_get_contents($url);
+			$xml = @simplexml_load_string($get_jobs, 'SimpleXMLElement', LIBXML_NOCDATA);
+			$jobs = json_decode(json_encode($xml), true);
 			
 			//widok konfigurancji i odlaczania
 			include('configure.php');

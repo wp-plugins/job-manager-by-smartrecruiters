@@ -79,6 +79,9 @@ If you have any questions or issues please visit our [support forum](http://gets
 
 == Changelog ==
 
+= 1.0.2 =
+* Fix displaying error messages when can't get jobs, locations and departments
+
 = 1.0.1 =
 * Fix issue with header redirect after connection
 * Fix issue with displaying jobs list with only one job
