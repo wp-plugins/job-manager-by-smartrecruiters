@@ -12,6 +12,10 @@
 		<p class="submit">
 			The plugin is already configured. If you want to disconnect Job Manager by SmartRecruiters plugin from your account, click <input type="submit" class="button-primary" value="<?php _e('Disconnect') ?>" />
 		</p>
+		
+		<?php if(@ini_get('allow_url_fopen') == false): ?>
+		<p style="color: red;">Plugin requires enable allow_url_fopen option in PHP server configuration. If you can't enable it, we recommend use our <a href="http://www.smartrecruiters.com/static/widgets/" target="_blank">Job Widget</a>.</p>
+		<?php endif; ?>
 	
 	</form>
 	

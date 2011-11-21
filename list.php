@@ -2,6 +2,8 @@
 
 <?php if(isset($jobs['jobs']['job']) && count($jobs['jobs']['job']) && $jobs['jobs']['job']): ?>
 
+	<?php $pos = strpos($_SERVER["REQUEST_URI"], '?'); ?>
+	
 	<!-- SmartRecruiters Jobs List -->
 	
 	<ul class="smartrecruitersJobList">
@@ -9,7 +11,16 @@
 		
 			<li class="smartrecruitersJobListElement">
 				<h2 class="smartrecruitersJobListElementHeader">
-					<a href="<?php echo $guid.'&srjob='.$jobs['jobs']['job']['@attributes']['code']; ?>" title="<?php echo $jobs['jobs']['job']['title']; ?>"><?php echo $jobs['jobs']['job']['title']; ?></a>
+			
+					<?php if($pos === false): ?>
+						<a href="<?php echo 'srjob/'.$jobs['jobs']['job']['@attributes']['code']; ?>" title="<?php echo $jobs['jobs']['job']['title']; ?>"><?php echo $jobs['jobs']['job']['title']; ?><?php echo $jobs['jobs']['job']['title']; ?></a>
+				
+						<?php else: ?>
+					
+							<a href="<?php echo $guid.'&srjob='.$jobs['jobs']['job']['@attributes']['code']; ?>" title="<?php echo $jobs['jobs']['job']['title']; ?>"><?php echo $jobs['jobs']['job']['title']; ?><?php echo $jobs['jobs']['job']['title']; ?></a>
+						
+						<?php endif; ?>
+						
 				</h2>
 								
 				<?php if(isset($jobs['jobs']['job']['job-location']['city']) && $jobs['jobs']['job']['job-location']['city']): ?>
@@ -29,9 +40,18 @@
 					<?php if((count($departments) && in_array($job['department'], $departments)) || !count($departments)): ?>
 				
 						<li class="smartrecruitersJobListElement">
-								<h2 class="smartrecruitersJobListElementHeader">
-									<a href="<?php echo $guid.'&srjob='.$job['@attributes']['code']; ?>" title="<?php echo $job['title']; ?>"><?php echo $job['title']; ?></a>
-								</h2>
+
+							<h2 class="smartrecruitersJobListElementHeader">
+								
+								<?php if($pos === false): ?>
+									<a href="<?php echo 'srjob/'.$job['@attributes']['code']; ?>" title="<?php echo $job['title']; ?>"><?php echo $job['title']; ?></a>
+				
+								<?php else: ?>
+									<a href="<?php echo $guid.'&srjob='.$job['@attributes']['code']; ?>" title="<?php echo $jobs['title']; ?>"><?php echo $job['title']; ?></a>
+						
+								<?php endif; ?>
+						
+					</h2>
 								
 								<?php if(isset($job['job-location']['city']) && $job['job-location']['city']): ?>
 									<ul class="smartrecruitersJobListDetails">

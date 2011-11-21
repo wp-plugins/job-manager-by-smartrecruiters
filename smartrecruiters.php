@@ -3,7 +3,7 @@
 Plugin Name: Job Manager by SmartRecruiters
 Plugin URI: http://dev.smartrecruiters.com
 Description: The easiest way to post jobs and manage applicants in a WordPress site. Connects with SmartRecruiters, the free Open SaaS recruiting software.
-Version: 1.0.2
+Version: 1.0.3
 Author: SmartRecruiters
 Author URI: http://smartrecruiters.com
 License: MIT
@@ -13,8 +13,7 @@ if(is_admin()){
 	require_once dirname( __FILE__ ) . '/admin.php';
 }
 
-
-function get_jobs($params = '', $guid){
+function get_jobs($params = '', $guid, $slug){
 	
 
 	//nazwa firmy pobrana z bazy wp
@@ -22,7 +21,7 @@ function get_jobs($params = '', $guid){
 	
 	
 	$url = 'https://www.smartrecruiters.com/cgi-bin/WebObjects/share.woa/wa/careersite?wpp_company='.$company_name;
-	
+
 	//pobieramy joby
 	$get_jobs = @file_get_contents($url);
 	
@@ -73,7 +72,7 @@ function replace_job_list($content){
 	$is_connected = get_option('sr_connected');
 	
 	if($is_connected){
-		
+	
 		$pattern = '/\#smartrecruiters\_job\_list[a-zA-Z0-9,\:\=\&amp;]*/';
 		
 		$search_string = preg_match_all($pattern, $content, $matches);
@@ -101,7 +100,7 @@ function replace_job_list($content){
 				}
 				
 				//podmieniamy nasze stringu w dotychczasowym contencie na job liste
-				$new_content = str_replace($base_match, get_jobs($params, $post -> guid), $new_content);
+				$new_content = str_replace($base_match, get_jobs($params, $post -> guid, $post -> post_name), $new_content);
 			}
 			
 			return $new_content;
@@ -118,20 +117,38 @@ function replace_job_list($content){
 function show_job(){
 	global $post, $wp_query;
 	
-	//jesli jest srjob wtedy robimy cuda i nadpisujemy wszystkei eistotne informacje - title, content itd - trzeba porzadnie przetestowac
-	if(isset($_GET['srjob']) && $_GET['srjob']){
+	if($wp_query -> is_404){
+	
+		$pattern = '/srjob\/[0-9]{4,}/';
+		
+		$search_string = preg_match_all($pattern, $_SERVER["REQUEST_URI"], $matches);
+		
+		if($search_string && isset($matches[0][0])){
+	
+			$match = explode('/', $matches[0][0]);
+			
+			$job_id = $match[1];
+		}
+		
+	}elseif(isset($_GET['srjob']) && $_GET['srjob']){
+		
+		$job_id = $_GET['srjob'];
+		
+	}
+	
+	if(isset($job_id)){
 	
 		//nazwa firmy pobrana z bazy wp
 		$company_name = get_option('srcompany');
 	
-		$url = 'https://www.smartrecruiters.com/cgi-bin/WebObjects/share.woa/wa/careersite?wpp_company=' . $company_name .'&posting=' . $_GET['srjob'];
-		$url ="http://dfssfsdf.com";
+		$url = 'https://www.smartrecruiters.com/cgi-bin/WebObjects/share.woa/wa/careersite?wpp_company=' . $company_name .'&posting=' . $job_id;
 		
 		$get_job = @file_get_contents($url);
 		
 		$xml = @simplexml_load_string($get_job, 'SimpleXMLElement', LIBXML_NOCDATA);
 		$job = json_decode(json_encode($xml), true);
 	
+		
 		if(isset($job['jobs']) && count($job['jobs'])){
 	
 			$wp_query -> is_404 = false;
@@ -143,13 +160,14 @@ function show_job(){
 			$post -> post_content .= '<p><a class="smartrecruitersApplyLink" href="'.$job['jobs']['job']['apply-url'].'" target="_blank">Apply</a></div>';
 	
 			$post -> comment_status = 'close';
-		}
 		
+		}
+	
 	}
 	
 }
 
-add_action( 'template_redirect', 'show_job');
 add_filter( 'the_content', 'replace_job_list');
+add_action( 'template_redirect', 'show_job');
 
 ?>

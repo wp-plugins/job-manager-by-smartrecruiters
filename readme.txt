@@ -79,6 +79,10 @@ If you have any questions or issues please visit our [support forum](http://gets
 
 == Changelog ==
 
+= 1.0.3 =
+* Fix job details routing with nice url
+* Add checking allow_url_fopen flag 
+
 = 1.0.2 =
 * Fix displaying error messages when can't get jobs, locations and departments
 
