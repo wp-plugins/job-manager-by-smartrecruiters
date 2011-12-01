@@ -79,6 +79,9 @@ If you have any questions or issues please visit our [support forum](http://gets
 
 == Changelog ==
 
+= 1.0.4 =
+* Fix connection with SmartRecruiters issue
+
 = 1.0.3 =
 * Fix job details routing with nice url
 * Add checking allow_url_fopen flag 

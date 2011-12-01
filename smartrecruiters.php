@@ -3,7 +3,7 @@
 Plugin Name: Job Manager by SmartRecruiters
 Plugin URI: http://dev.smartrecruiters.com
 Description: The easiest way to post jobs and manage applicants in a WordPress site. Connects with SmartRecruiters, the free Open SaaS recruiting software.
-Version: 1.0.3
+Version: 1.0.4
 Author: SmartRecruiters
 Author URI: http://smartrecruiters.com
 License: MIT
@@ -20,7 +20,7 @@ function get_jobs($params = '', $guid, $slug){
 	$company_name = get_option('srcompany');
 	
 	
-	$url = 'https://www.smartrecruiters.com/cgi-bin/WebObjects/share.woa/wa/careersite?wpp_company='.$company_name;
+	$url = 'https://www.smartrecruiters.com/cgi-bin/WebObjects/share.woa/wa/careersite?wpp_company='.$company_name.'&installed_url=http://'.$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
 
 	//pobieramy joby
 	$get_jobs = @file_get_contents($url);
@@ -141,7 +141,7 @@ function show_job(){
 		//nazwa firmy pobrana z bazy wp
 		$company_name = get_option('srcompany');
 	
-		$url = 'https://www.smartrecruiters.com/cgi-bin/WebObjects/share.woa/wa/careersite?wpp_company=' . $company_name .'&posting=' . $job_id;
+		$url = 'https://www.smartrecruiters.com/cgi-bin/WebObjects/share.woa/wa/careersite?wpp_company='.$company_name .'&posting='.$job_id.'&installed_url=http://'.$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
 		
 		$get_job = @file_get_contents($url);
 		
