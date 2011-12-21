@@ -3,7 +3,7 @@
 Plugin Name: Job Manager by SmartRecruiters
 Plugin URI: http://dev.smartrecruiters.com
 Description: The easiest way to post jobs and manage applicants in a WordPress site. Connects with SmartRecruiters, the free Open SaaS recruiting software.
-Version: 1.0.4
+Version: 1.0.5
 Author: SmartRecruiters
 Author URI: http://smartrecruiters.com
 License: MIT
@@ -52,7 +52,7 @@ function get_jobs($params = '', $guid, $slug){
 		
 	}
 	
-	//teraz  dolaczymy plik list.php w nim "postawia" sie wszystkei zmienne i wynik teg owszystkeigo wrzucamy do buffora - gdybysm ynei wrzucali do buffora to odrazu by nam wyswietlilo liste czego nie chcemy
+	//teraz  dolaczymy plik list.php w nim "podstawia" sie wszystkei zmienne i wynik teg owszystkeigo wrzucamy do buffora - gdybysm ynei wrzucali do buffora to odrazu by nam wyswietlilo liste czego nie chcemy
 	ob_start();
 	
 	include('list.php');
@@ -73,11 +73,10 @@ function replace_job_list($content){
 	
 	if($is_connected){
 	
-		$pattern = '/\#smartrecruiters\_job\_list[a-zA-Z0-9,\:\=\&amp;]*/';
-		
+		$pattern = '/\#smartrecruiters\_job\_list[a-zA-Z0-9,\s\:\=\&amp;]*/';
 		$search_string = preg_match_all($pattern, $content, $matches);
 		
-		//znaleziono przynajmniej jeden nasz string terz trzeba go dzielic i dzielic az otrzymamy tablice parametrow np $params['location'] = cracow
+		//znaleziono przynajmniej jeden nasz string teraz trzeba go dzielic i dzielic az otrzymamy tablice parametrow np $params['location'] = cracow
 		if($search_string){
 			
 			$new_content = $content;
@@ -156,7 +155,7 @@ function show_job(){
 		
 			//tutaj trzeba pobrac ogoszenie z danym id i zrob ten sma myk z bufforem co w przypadku listy i nadpisac dane posta
 			$post -> post_title = $job['jobs']['job']['title'];
-			$post -> post_content = '<div class="smartrecruitersJobDetails">'.implode('', $job['jobs']['job']['full-description']);
+			$post -> post_content = '<div class="smartrecruitersJobDetails"><p class="smartrecruitersBackLink"><a href="'.$post -> guid.'">&laquo; back to jobs list</a></p>'.implode('', $job['jobs']['job']['full-description']);
 			$post -> post_content .= '<p><a class="smartrecruitersApplyLink" href="'.$job['jobs']['job']['apply-url'].'" target="_blank">Apply</a></div>';
 	
 			$post -> comment_status = 'close';

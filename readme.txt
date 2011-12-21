@@ -79,6 +79,9 @@ If you have any questions or issues please visit our [support forum](http://gets
 
 == Changelog ==
 
+= 1.0.5 =
+* Fix displaying jobs list with multiple word depatrment
+
 = 1.0.4 =
 * Fix connection with SmartRecruiters issue
 

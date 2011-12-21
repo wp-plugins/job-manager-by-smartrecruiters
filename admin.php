@@ -1,6 +1,6 @@
 <?php
 
-	//ta funkcja ooglnie mowi ze bedziemy dodawac cos do admina - tzn ja to tak zrozumialem
+	//ta funkcja ooglnie mowi ze bedziemy dodawac cos do admina
 	add_action('admin_menu', 'smartecruiters_config_page');
 
 	//dodanie pozycji w menu plugins
