@@ -79,6 +79,9 @@ If you have any questions or issues please visit our [support forum](http://gets
 
 == Changelog ==
 
+= 1.0.6 =
+* Fix displaying jobads when using nice urls
+
 = 1.0.5 =
 * Fix displaying jobs list with multiple word depatrment
 
