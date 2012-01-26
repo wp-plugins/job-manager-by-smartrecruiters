@@ -13,7 +13,7 @@
 				<h2 class="smartrecruitersJobListElementHeader">
 			
 					<?php if($pos === false): ?>
-						<a href="<?php echo 'srjob/'.$jobs['jobs']['job']['@attributes']['code']; ?>" title="<?php echo $jobs['jobs']['job']['title']; ?>"><?php echo $jobs['jobs']['job']['title']; ?><?php echo $jobs['jobs']['job']['title']; ?></a>
+						<a href="<?php echo $_SERVER["REQUEST_URI"].'/srjob/'.$jobs['jobs']['job']['@attributes']['code']; ?>" title="<?php echo $jobs['jobs']['job']['title']; ?>"><?php echo $jobs['jobs']['job']['title']; ?><?php echo $jobs['jobs']['job']['title']; ?></a>
 				
 						<?php else: ?>
 					
@@ -44,7 +44,7 @@
 							<h2 class="smartrecruitersJobListElementHeader">
 								
 								<?php if($pos === false): ?>
-									<a href="<?php echo 'srjob/'.$job['@attributes']['code']; ?>" title="<?php echo $job['title']; ?>"><?php echo $job['title']; ?></a>
+									<a href="<?php echo $_SERVER["REQUEST_URI"].'/srjob/'.$job['@attributes']['code']; ?>" title="<?php echo $job['title']; ?>"><?php echo $job['title']; ?></a>
 				
 								<?php else: ?>
 									<a href="<?php echo $guid.'&srjob='.$job['@attributes']['code']; ?>" title="<?php echo $jobs['title']; ?>"><?php echo $job['title']; ?></a>

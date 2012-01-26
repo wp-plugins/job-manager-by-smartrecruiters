@@ -20,10 +20,10 @@ function get_jobs($params = '', $guid, $slug){
 	$company_name = get_option('srcompany');
 	
 	
-	$url = 'https://www.smartrecruiters.com/cgi-bin/WebObjects/share.woa/wa/careersite?wpp_company='.$company_name.'&installed_url=http://'.$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+	$url = 'http://www.smartrecruiters.com/cgi-bin/WebObjects/share.woa/wa/careersite?wpp_company='.$company_name.'&installed_url=http://'.$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
 
 	//pobieramy joby
-	$get_jobs = @file_get_contents($url);
+	$get_jobs = @file_get_contents($url); // @ is switching off error reporting
 	
 	$xml = @simplexml_load_string($get_jobs, 'SimpleXMLElement', LIBXML_NOCDATA);
 	
@@ -98,7 +98,10 @@ function replace_job_list($content){
 					$params = $match[1];
 				}
 				
-				//podmieniamy nasze stringu w dotychczasowym contencie na job liste
+				// podmieniamy nasze stringu w dotychczasowym contencie na job liste
+				// $params - list of parameters (departments, locations)
+				// guid - link to post (ugly url)
+				// $post - link slug - link to post (nice url)
 				$new_content = str_replace($base_match, get_jobs($params, $post -> guid, $post -> post_name), $new_content);
 			}
 			
@@ -114,23 +117,21 @@ function replace_job_list($content){
 }
 
 function show_job(){
-	global $post, $wp_query;
+	global $post, $wp_query, $posts, $job_id;;
 	
-	if($wp_query -> is_404){
-	
-		$pattern = '/srjob\/[0-9]{4,}/';
+	$pattern = '/srjob\/[0-9]{4,}/';
+	if(preg_match_all($pattern, $_SERVER["REQUEST_URI"], $matches)){
 		
-		$search_string = preg_match_all($pattern, $_SERVER["REQUEST_URI"], $matches);
+		$guid=substr ($_SERVER["REQUEST_URI"],0,-1*strlen($matches[0][0]));
 		
-		if($search_string && isset($matches[0][0])){
+		if(isset($matches[0][0])){
 	
-			$match = explode('/', $matches[0][0]);
-			
+			$match = explode('/', $matches[0][0]);			
 			$job_id = $match[1];
 		}
 		
 	}elseif(isset($_GET['srjob']) && $_GET['srjob']){
-		
+		$guid=$post -> guid;
 		$job_id = $_GET['srjob'];
 		
 	}
@@ -140,25 +141,35 @@ function show_job(){
 		//nazwa firmy pobrana z bazy wp
 		$company_name = get_option('srcompany');
 	
-		$url = 'https://www.smartrecruiters.com/cgi-bin/WebObjects/share.woa/wa/careersite?wpp_company='.$company_name .'&posting='.$job_id.'&installed_url=http://'.$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+		$url = 'http://www.smartrecruiters.com/cgi-bin/WebObjects/share.woa/wa/careersite?wpp_company='.$company_name .'&posting='.$job_id.'&installed_url=http://'.$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
 		
 		$get_job = @file_get_contents($url);
 		
 		$xml = @simplexml_load_string($get_job, 'SimpleXMLElement', LIBXML_NOCDATA);
+		
 		$job = json_decode(json_encode($xml), true);
 	
 		
 		if(isset($job['jobs']) && count($job['jobs'])){
-	
+		
+		
+	       //wp_reset_query();
+	     
 			$wp_query -> is_404 = false;
 			$wp_query -> is_single = true;
+			$wp_query ->post_count =1;
+		
 		
 			//tutaj trzeba pobrac ogoszenie z danym id i zrob ten sma myk z bufforem co w przypadku listy i nadpisac dane posta
 			$post -> post_title = $job['jobs']['job']['title'];
-			$post -> post_content = '<div class="smartrecruitersJobDetails"><p class="smartrecruitersBackLink"><a href="'.$post -> guid.'">&laquo; back to jobs list</a></p>'.implode('', $job['jobs']['job']['full-description']);
+			$post -> post_content = '<div class="smartrecruitersJobDetails"><p class="smartrecruitersBackLink"><a href="'.$guid.'">&laquo; back to jobs list</a></p>'.implode('', $job['jobs']['job']['full-description']);
 			$post -> post_content .= '<p><a class="smartrecruitersApplyLink" href="'.$job['jobs']['job']['apply-url'].'" target="_blank">Apply</a></div>';
 	
 			$post -> comment_status = 'close';
+			$posts[0]=$post;
+						
+			
+		
 		
 		}
 	
@@ -166,7 +177,10 @@ function show_job(){
 	
 }
 
+
+
 add_filter( 'the_content', 'replace_job_list');
 add_action( 'template_redirect', 'show_job');
+
 
 ?>
