@@ -3,7 +3,7 @@
 Plugin Name: Job Manager by SmartRecruiters
 Plugin URI: http://dev.smartrecruiters.com
 Description: The easiest way to post jobs and manage applicants in a WordPress site. Connects with SmartRecruiters, the free Open SaaS recruiting software.
-Version: 1.0.6
+Version: 1.0.7
 Author: SmartRecruiters
 Author URI: http://smartrecruiters.com
 License: MIT
@@ -16,7 +16,7 @@ if(is_admin()){
 function get_jobs($params = '', $guid, $slug){
 	
 
-	//nazwa firmy pobrana z bazy wp
+	// company name taken from the WP database
 	$company_name = get_option('srcompany');
 	
 	
