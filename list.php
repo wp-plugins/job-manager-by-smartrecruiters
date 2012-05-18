@@ -2,8 +2,17 @@
 
 <?php if(isset($jobs['jobs']['job']) && count($jobs['jobs']['job']) && $jobs['jobs']['job']): ?>
 
-	<?php $pos = strpos($_SERVER["REQUEST_URI"], '?'); ?>
-	
+    <?php
+        function get_job_url ( $code ) {
+            $url = $_SERVER["REQUEST_URI"];
+            if(get_option('permalink_structure') == '')
+                if(strpos($url, '?')) $url .= '&srjob='; else $url .= '?srjob=';
+            else
+                if(substr($url, -1) == '/') $url .= 'srjob/'; else $url .= '/srjob/'; 
+            return $url.$code;
+        }
+    ?>
+
 	<!-- SmartRecruiters Jobs List -->
 	
 	<ul class="smartrecruitersJobList">
@@ -11,16 +20,7 @@
 		
 			<li class="smartrecruitersJobListElement">
 				<h2 class="smartrecruitersJobListElementHeader">
-			
-					<?php if($pos === false): ?>
-						<a href="<?php echo $_SERVER["REQUEST_URI"].'/srjob/'.$jobs['jobs']['job']['@attributes']['code']; ?>" title="<?php echo $jobs['jobs']['job']['title']; ?>"><?php echo $jobs['jobs']['job']['title']; ?><?php echo $jobs['jobs']['job']['title']; ?></a>
-				
-						<?php else: ?>
-					
-							<a href="<?php echo $guid.'&srjob='.$jobs['jobs']['job']['@attributes']['code']; ?>" title="<?php echo $jobs['jobs']['job']['title']; ?>"><?php echo $jobs['jobs']['job']['title']; ?><?php echo $jobs['jobs']['job']['title']; ?></a>
-						
-						<?php endif; ?>
-						
+                                    <a href="<?php echo get_job_url($jobs['jobs']['job']['@attributes']['code']); ?>" title="<?php echo $jobs['jobs']['job']['title']; ?>"><?php echo $jobs['jobs']['job']['title']; ?><?php echo $jobs['jobs']['job']['title']; ?></a>
 				</h2>
 								
 				<?php if(isset($jobs['jobs']['job']['job-location']['city']) && $jobs['jobs']['job']['job-location']['city']): ?>
@@ -39,27 +39,19 @@
 					
 					<?php if((count($departments) && in_array($job['department'], $departments)) || !count($departments)): ?>
 				
-						<li class="smartrecruitersJobListElement">
+                        <li class="smartrecruitersJobListElement">
 
-							<h2 class="smartrecruitersJobListElementHeader">
-								
-								<?php if($pos === false): ?>
-									<a href="<?php echo $_SERVER["REQUEST_URI"].'/srjob/'.$job['@attributes']['code']; ?>" title="<?php echo $job['title']; ?>"><?php echo $job['title']; ?></a>
-				
-								<?php else: ?>
-									<a href="<?php echo $guid.'&srjob='.$job['@attributes']['code']; ?>" title="<?php echo $jobs['title']; ?>"><?php echo $job['title']; ?></a>
-						
-								<?php endif; ?>
-						
-					</h2>
-								
-								<?php if(isset($job['job-location']['city']) && $job['job-location']['city']): ?>
-									<ul class="smartrecruitersJobListDetails">
-										<li class="smartrecruitersJobListDetailsElement"><?php echo $job['job-location']['city']; ?></li>
-									</ul>
-								<?php endif; ?>
-								
-							</li>
+                            <h2 class="smartrecruitersJobListElementHeader">
+                                <a href="<?php echo get_job_url($job['@attributes']['code']); ?>" title="<?php echo $job['title']; ?>"><?php echo $job['title']; ?></a>
+                            </h2>
+
+                            <?php if(isset($job['job-location']['city']) && $job['job-location']['city']): ?>
+                                <ul class="smartrecruitersJobListDetails">
+                                    <li class="smartrecruitersJobListDetailsElement"><?php echo $job['job-location']['city']; ?></li>
+                                </ul>
+                            <?php endif; ?>
+
+                        </li>
 					
 					<?php endif; ?>
 					

@@ -79,6 +79,9 @@ If you have any questions or issues please visit our [support forum](http://gets
 
 == Changelog ==
 
+= 1.0.8 =
+* Fix job detail url - when using nice urls and without
+
 = 1.0.7 =
 * Minor changes
 
