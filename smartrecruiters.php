@@ -117,7 +117,7 @@ function replace_job_list($content){
 }
 
 function show_job(){
-	global $post, $wp_query, $posts, $job_id;;
+	global $post, $wp_query, $posts, $job_id;
 	
 	$pattern = '/srjob\/[0-9]{4,}/';
 	if(preg_match_all($pattern, $_SERVER["REQUEST_URI"], $matches)){
@@ -180,6 +180,7 @@ function show_job(){
 
 
 add_filter( 'the_content', 'replace_job_list');
+add_filter( 'widget_text', 'replace_job_list');
 add_action( 'template_redirect', 'show_job');
 
 
