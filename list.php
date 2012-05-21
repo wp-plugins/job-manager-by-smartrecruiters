@@ -3,13 +3,15 @@
 <?php if(isset($jobs['jobs']['job']) && count($jobs['jobs']['job']) && $jobs['jobs']['job']): ?>
 
     <?php
-        function get_job_url ( $code ) {
-            $url = $_SERVER["REQUEST_URI"];
-            if(get_option('permalink_structure') == '')
-                if(strpos($url, '?')) $url .= '&srjob='; else $url .= '?srjob=';
-            else
-                if(substr($url, -1) == '/') $url .= 'srjob/'; else $url .= '/srjob/'; 
-            return $url.$code;
+        if(!function_exists('get_job_url')) {
+            function get_job_url ( $code ) {
+                $url = $_SERVER["REQUEST_URI"];
+                if(get_option('permalink_structure') == '')
+                    if(strpos($url, '?')) $url .= '&srjob='; else $url .= '?srjob=';
+                else
+                    if(substr($url, -1) == '/') $url .= 'srjob/'; else $url .= '/srjob/';
+                return $url.$code;
+            }
         }
     ?>
 
