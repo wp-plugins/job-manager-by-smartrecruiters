@@ -38,3 +38,8 @@ select.StringGeneratorSectionSelect{
 #string_generator_result{
 	width: 420px !important;
 }
+
+select.selectJobDetailTemplate{
+    width: 420px !important;
+}
+

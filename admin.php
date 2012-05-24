@@ -35,7 +35,13 @@
 			$get_jobs = @file_get_contents($url);
 			$xml = @simplexml_load_string($get_jobs, 'SimpleXMLElement', LIBXML_NOCDATA);
 			$jobs = json_decode(json_encode($xml), true);
-			
+
+            if( isset($_POST['template']) ){
+                update_option('sr_jobDetailsPageTemplate', esc_attr($_POST['template']) );
+            }
+            $available_templates = get_page_templates();
+            $active_template = get_option('sr_jobDetailsPageTemplate');
+
 			//widok konfigurancji i odlaczania
 			include('configure.php');
 		
@@ -47,8 +53,7 @@
 				$location = 'http://'.$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
 				echo '<script>window.location = "'.$location.'";</script>';
 			}
-			
-			
+
 			//widok laczenia/logowania
 			include('connect.php');
 		}

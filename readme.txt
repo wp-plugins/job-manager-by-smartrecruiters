@@ -36,7 +36,7 @@ Job Posting
 Online Application
 
 * People apply online using an application form that you can configure
-* Includes â€śApply With LinkedInâ€ť or â€śApply with Facebookâ€ť functionalities
+* Includes "Apply With LinkedIn" or "Apply with Facebook" functionalities
 * Also has resume parsing technology which reads a resume (word, pdf,..) and fills in the form on behalf of applicant.
 * People can attach documents (resume, letter, portfolio...), which are all indexed and become searchable in your candidate pool.
 * Includes EEO and veteran information collected confidentially
@@ -60,17 +60,17 @@ Other
 * Secured https connection for Online Application and access to Candidate Details (a legal must)
 * Smart security model with multiple user roles allows to control who has access to which jobs and candidates. 
 
-Job Manager by SmartRecruiters should be easy to [install](http://dev.smartrecruiters.com/?page_id=23) and use. Weâ€™d love to [hear from you](http://getsatisfaction.com/smartrecruiters/products/smartrecruiters_wordpress_plugin) if you have any issues, questions or ideas.
+Job Manager by SmartRecruiters should be easy to [install](http://dev.smartrecruiters.com/index.php/wordpress-plugin-2/installation/?utm_source=wordpress&utm_medium=plugin&utm_campaign=wordpress-plugin&utm_content=none&utm_partner=none&utm_adgroup=none&utm_term=none&km_matchtype=none) and use. We'd love to [hear from you](http://getsatisfaction.com/smartrecruiters/products/smartrecruiters_wordpress_plugin) if you have any issues, questions or ideas.
 
-If you donâ€™t have a SmartRecruiters account yet, you can sign up [here](http://www.smartrecruiters.com/static/wordpress_signup) (it is entirely free forever). 
+If you don't have a SmartRecruiters account yet, you can sign up [here](http://www.smartrecruiters.com/static/wordpress_signup/?utm_source=wordpress&utm_medium=plugin&utm_campaign=wordpress-plugin&utm_content=none&utm_partner=none&utm_adgroup=none&utm_term=none&km_matchtype=none) (it is entirely free forever).
 
 == Installation ==
 
 1. Use the automatic installer or FTP client to upload plugin to 'wp-content/plugins' directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Go to 'Job Manager by SmartRecruiters' in 'Plugins' section.
-4. Connect plugin with your SmartRecruiters account typing your email and password. If you don't have SmartRecruiters account - [signup](http://www.smartrecruiters.com/static/wordpress_signup) for free.
-5. Generate hashcode (`#smartrecruiters_job_list`) and paste it to post or page content. See [concept](http://dev.smartrecruiters.com/?page_id=45) and [styling](http://dev.smartrecruiters.com/?page_id=65) for more info.
+4. Connect plugin with your SmartRecruiters account typing your email and password. If you don't have SmartRecruiters account - [signup](http://www.smartrecruiters.com/static/wordpress_signup/?utm_source=wordpress&utm_medium=plugin&utm_campaign=wordpress-plugin&utm_content=none&utm_partner=none&utm_adgroup=none&utm_term=none&km_matchtype=none) for free.
+5. Generate hashcode (`#smartrecruiters_job_list`) and paste it to post or page content. See [concept](http://dev.smartrecruiters.com/index.php/wordpress-plugin-2/concept/?utm_source=wordpress&utm_medium=plugin&utm_campaign=wordpress-plugin&utm_content=none&utm_partner=none&utm_adgroup=none&utm_term=none&km_matchtype=none) and [styling](http://dev.smartrecruiters.com/index.php/wordpress-plugin-2/styling/?utm_source=wordpress&utm_medium=plugin&utm_campaign=wordpress-plugin&utm_content=none&utm_partner=none&utm_adgroup=none&utm_term=none&km_matchtype=none) for more info.
 6. That's it!
 
 == Frequently Asked Questions ==
@@ -78,6 +78,9 @@ If you donâ€™t have a SmartRecruiters account yet, you can sign up [here](h
 If you have any questions or issues please visit our [support forum](http://getsatisfaction.com/smartrecruiters/products/smartrecruiters_wordpress_plugin).
 
 == Changelog ==
+
+= 1.0.9 =
+* Add option 'Choose template for Job Detail Page'
 
 = 1.0.8 =
 * Fix job detail url - when using nice urls and without

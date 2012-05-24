@@ -106,5 +106,22 @@
 		</div>
 		
 	</div>
+
+    <br/>
+
+    <form method="post" action="plugins.php?page=smartrecruiters-config">
+
+        <p>Choose template for Job Detail Page:</p>
+
+        <select class="selectJobDetailTemplate" name="template">
+            <option value="">Default</option>
+            <?php foreach( $available_templates as $name => $file ) { ?>
+                <option value="<?php echo $file; ?>" <?php echo $active_template==$file ? 'selected="selected"' : '' ?>><?php echo $name; ?></option>
+            <?php } ?>
+        </select>
+
+        <input type="submit" class="button-primary" value="<?php _e('Save') ?>" />
+
+    </form>
 	
 </div>
