@@ -6,6 +6,10 @@
         if(!function_exists('get_job_url')) {
             function get_job_url ( $code ) {
                 $url = $_SERVER["REQUEST_URI"];
+
+                if ( strpos($url, 'srjob') )
+                    $url = substr($url, 0, strpos($url, 'srjob') );
+
                 if(get_option('permalink_structure') == '')
                     if(strpos($url, '?')) $url .= '&srjob='; else $url .= '?srjob=';
                 else

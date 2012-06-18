@@ -3,7 +3,7 @@
 Plugin Name: Job Manager by SmartRecruiters
 Plugin URI: http://dev.smartrecruiters.com
 Description: The easiest way to post jobs and manage applicants in a WordPress site. Connects with SmartRecruiters, the free Open SaaS recruiting software.
-Version: 1.0.8
+Version: 1.1.0
 Author: SmartRecruiters
 Author URI: http://smartrecruiters.com
 License: MIT
@@ -148,8 +148,7 @@ function show_job(){
 		$xml = @simplexml_load_string($get_job, 'SimpleXMLElement', LIBXML_NOCDATA);
 		
 		$job = json_decode(json_encode($xml), true);
-	
-		
+
 		if(isset($job['jobs']) && count($job['jobs'])){
 		
 		
@@ -157,20 +156,35 @@ function show_job(){
 	     
 			$wp_query -> is_404 = false;
 			$wp_query -> is_single = true;
-			$wp_query ->post_count =1;
-		
-		
+			$wp_query -> post_count = 1;
+
 			//tutaj trzeba pobrac ogoszenie z danym id i zrob ten sma myk z bufforem co w przypadku listy i nadpisac dane posta
 			$post -> post_title = $job['jobs']['job']['title'];
-			$post -> post_content = '<div class="smartrecruitersJobDetails"><p class="smartrecruitersBackLink"><a href="'.$guid.'">&laquo; back to jobs list</a></p>'.implode('', $job['jobs']['job']['full-description']);
-			$post -> post_content .= '<p><a class="smartrecruitersApplyLink" href="'.$job['jobs']['job']['apply-url'].'" target="_blank">Apply</a></div>';
+			$post -> post_content =
+                '<div class="smartrecruitersJobDetails">' .
+                    '<div class="smartrecruitersBackLink">' . '<a href="'.$guid.'">&laquo; back to jobs list</a>' . '</div>' .
+                    '<div class="smartrecruitersCompanyDescription smartrecruitersDescriptionBlock">' . $job['jobs']['job']['full-description']['company_description'] . '</div>'.
+                    '<div class="smartrecruitersJobDescription smartrecruitersDescriptionBlock">' . $job['jobs']['job']['full-description']['job_description'] . '</div>'.
+                    '<div class="smartrecruitersJobRequirements smartrecruitersDescriptionBlock">' . $job['jobs']['job']['full-description']['job_requirements'] . '</div>'.
+			        '<div class="smartrecruitersApplyLink">' . '<a href="'.$job['jobs']['job']['apply-url'].'" target="_blank">Apply</a>' . '</div>' .
+                '</div>';
 	
 			$post -> comment_status = 'close';
 			$posts[0]=$post;
-						
-			
-		
-		
+
+            $active_template = get_option('sr_jobDetailsPageTemplate');
+            if ( $active_template ) {
+                $tpl_file = TEMPLATEPATH . "/" . $active_template;
+                if ( file_exists($tpl_file) ) {
+                    include($tpl_file);
+                    exit;
+                }else{
+                    return;
+                }
+            }else{
+                return;
+            }
+
 		}
 	
 	}
