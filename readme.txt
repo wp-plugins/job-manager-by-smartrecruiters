@@ -79,6 +79,9 @@ If you have any questions or issues please visit our [support forum](http://gets
 
 == Changelog ==
 
+= 1.1.1 =
+* Fix double job title display
+
 = 1.1.0 =
 * Split job description to blocks, add classes for them
 

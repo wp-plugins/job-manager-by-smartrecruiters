@@ -25,8 +25,8 @@
 		<?php if(isset($jobs['jobs']['job']['@attributes'])): ?>
 		
 			<li class="smartrecruitersJobListElement">
-				<h2 class="smartrecruitersJobListElementHeader">
-                                    <a href="<?php echo get_job_url($jobs['jobs']['job']['@attributes']['code']); ?>" title="<?php echo $jobs['jobs']['job']['title']; ?>"><?php echo $jobs['jobs']['job']['title']; ?><?php echo $jobs['jobs']['job']['title']; ?></a>
+                <h2 class="smartrecruitersJobListElementHeader">
+                    <a href="<?php echo get_job_url($jobs['jobs']['job']['@attributes']['code']); ?>" title="<?php echo $jobs['jobs']['job']['title']; ?>"><?php echo $jobs['jobs']['job']['title']; ?></a>
 				</h2>
 								
 				<?php if(isset($jobs['jobs']['job']['job-location']['city']) && $jobs['jobs']['job']['job-location']['city']): ?>
