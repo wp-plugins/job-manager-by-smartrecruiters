@@ -79,6 +79,9 @@ If you have any questions or issues please visit our [support forum](http://gets
 
 == Changelog ==
 
+= 1.1.2 =
+* Updated sign-in functionality
+
 = 1.1.1 =
 * Fix double job title display
 
