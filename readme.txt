@@ -8,10 +8,10 @@ Tags: jobs, career, ats, recruitment, recruiting, smartrecruiters
 
 == Description ==
 
-The easiest way to post jobs and manage applicants in a WordPress site.
-Connects with SmartRecruiters, the free Open SaaS recruiting software.
+The easiest way to post jobs and manage candidates in a WordPress site.
+Connects with SmartRecruiters Premium, your workspace to find and hire great people.
 
-Main functionalities include:
+Here's an overview of all the features:
 
 Job Listing
 
@@ -62,7 +62,7 @@ Other
 
 Job Manager by SmartRecruiters should be easy to [install](http://dev.smartrecruiters.com/index.php/wordpress-plugin-2/installation/?utm_source=wordpress&utm_medium=plugin&utm_campaign=wordpress-plugin&utm_content=none&km_partner=none&km_adgroup=none&utm_term=none&km_matchtype=none) and use. We'd love to [hear from you](http://getsatisfaction.com/smartrecruiters/products/smartrecruiters_wordpress_plugin) if you have any issues, questions or ideas.
 
-If you don't have a SmartRecruiters account yet, you can sign up [here](http://www.smartrecruiters.com/static/wordpress_signup/?utm_source=wordpress&utm_medium=plugin&utm_campaign=wordpress-plugin&utm_content=none&km_partner=none&km_adgroup=none&utm_term=none&km_matchtype=none) (it is entirely free forever).
+If you don't have a SmartRecruiters account yet, you can sign up [here](http://www.smartrecruiters.com/static/wordpress_signup/?utm_source=wordpress&utm_medium=plugin&utm_campaign=wordpress-plugin&utm_content=none&km_partner=none&km_adgroup=none&utm_term=none&km_matchtype=none).
 
 == Installation ==
 
@@ -78,6 +78,9 @@ If you don't have a SmartRecruiters account yet, you can sign up [here](http://w
 If you have any questions or issues please visit our [support forum](http://getsatisfaction.com/smartrecruiters/products/smartrecruiters_wordpress_plugin).
 
 == Changelog ==
+
+= 1.1.3 =
+* Updated plugin description
 
 = 1.1.2 =
 * Updated sign-in functionality
