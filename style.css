@@ -1,0 +1,45 @@
+.smartRecruitersPluginPageForm{
+	padding: 15px 0 0 0;
+}
+
+.smartRecruitersPluginPageForm div{
+	margin: 0 0 15px 0;
+}
+
+.smartRecruitersPluginPageFormLabel{
+	display: block;
+}
+
+.smartRecruitersPluginPageFormInput{
+	width: 250px;
+}
+
+#string_generator{
+	overflow: hidden;
+}
+
+.StringGeneratorSection{
+	width: 200px;
+	float: left;
+	margin: 0 20px 0 0;
+}
+
+select.StringGeneratorSectionSelect{
+	display: block !important;
+	height: 200px !important;
+	width: 200px !important;
+}
+
+.StringGeneratorResultSection{
+	clear: both !important;
+	margin: 270px 0 0 0;
+}
+
+#string_generator_result{
+	width: 420px !important;
+}
+
+select.selectJobDetailTemplate{
+    width: 420px !important;
+}
+
