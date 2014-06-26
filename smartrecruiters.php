@@ -2,7 +2,7 @@
 /*
 Plugin Name: Job Manager by SmartRecruiters
 Plugin URI: http://dev.smartrecruiters.com
-Description: The easiest way to post jobs and manage candidates in WordPress. Connects with SmartRecruiters Premium, your workspace to find and hire great people.
+Description: The easiest way to post jobs and manage candidates in a WordPress site. Connects with SmartRecruiters, your workspace to find and hire great people.
 Version: 1.1.3
 Author: SmartRecruiters
 Author URI: http://smartrecruiters.com

@@ -9,7 +9,7 @@ Tags: jobs, career, ats, recruitment, recruiting, smartrecruiters
 == Description ==
 
 The easiest way to post jobs and manage candidates in a WordPress site.
-Connects with SmartRecruiters Premium, your workspace to find and hire great people.
+Connects with SmartRecruiters, your workspace to find and hire great people.
 
 Here's an overview of all the features:
 
@@ -62,15 +62,15 @@ Other
 
 Job Manager by SmartRecruiters should be easy to [install](http://dev.smartrecruiters.com/index.php/wordpress-plugin-2/installation/?utm_source=wordpress&utm_medium=plugin&utm_campaign=wordpress-plugin&utm_content=none&km_partner=none&km_adgroup=none&utm_term=none&km_matchtype=none) and use. We'd love to [hear from you](http://getsatisfaction.com/smartrecruiters/products/smartrecruiters_wordpress_plugin) if you have any issues, questions or ideas.
 
-If you don't have a SmartRecruiters account yet, you can sign up [here](http://www.smartrecruiters.com/static/wordpress_signup/?utm_source=wordpress&utm_medium=plugin&utm_campaign=wordpress-plugin&utm_content=none&km_partner=none&km_adgroup=none&utm_term=none&km_matchtype=none).
+If you don't have a SmartRecruiters account yet, you can sign up [here](https://www.smartrecruiters.com/sign-up/wordpress-plugin/?utm_source=wordpress&utm_medium=plugin&utm_campaign=wordpress-plugin&utm_content=none&km_partner=none&km_adgroup=none&utm_term=none&km_matchtype=none).
 
 == Installation ==
 
 1. Use the automatic installer or FTP client to upload plugin to 'wp-content/plugins' directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Go to 'Job Manager by SmartRecruiters' in 'Plugins' section.
-4. Connect plugin with your SmartRecruiters account typing your email and password. If you don't have SmartRecruiters account - [signup](http://www.smartrecruiters.com/static/wordpress_signup/?utm_source=wordpress&utm_medium=plugin&utm_campaign=wordpress-plugin&utm_content=none&km_partner=none&km_adgroup=none&utm_term=none&km_matchtype=none) for free.
-5. Generate hashcode (`#smartrecruiters_job_list`) and paste it to post or page content. See [concept](http://dev.smartrecruiters.com/index.php/wordpress-plugin-2/concept/?utm_source=wordpress&utm_medium=plugin&utm_campaign=wordpress-plugin&utm_content=none&km_partner=none&km_adgroup=none&utm_term=none&km_matchtype=none) and [styling](http://dev.smartrecruiters.com/index.php/wordpress-plugin-2/styling/?utm_source=wordpress&utm_medium=plugin&utm_campaign=wordpress-plugin&utm_content=none&km_partner=none&km_adgroup=none&utm_term=none&km_matchtype=none) for more info.
+4. Connect plugin with your SmartRecruiters account typing your email and password. If you don't have SmartRecruiters account - [signup](https://www.smartrecruiters.com/sign-up/wordpress-plugin/?utm_source=wordpress&utm_medium=plugin&utm_campaign=wordpress-plugin&utm_content=none&km_partner=none&km_adgroup=none&utm_term=none&km_matchtype=none) for free.
+5. Generate hashcode (`#smartrecruiters_job_list`) and paste it to post or page content. See [concept](http://dev.smartrecruiters.com/index.php/wordpress-plugin-2/concept/?utm_source=wordpress&utm_medium=plugin&utm_campaign=wordpress-plugin&utm_content=none&km_partner=none&km_adgroup=none&utm_term=none&km_matchtype=none) and [styling](dhttp://dev.smartrecruiters.com/index.php/worpress-plugin-2/styling/?utm_source=wordpress&utm_medium=plugin&utm_campaign=wordpress-plugin&utm_content=none&km_partner=none&km_adgroup=none&utm_term=none&km_matchtype=none) for more info.
 6. That's it!
 
 == Frequently Asked Questions ==
