@@ -79,6 +79,9 @@ If you have any questions or issues please visit our [support forum](http://gets
 
 == Changelog ==
 
+= 1.1.4 =
+* Fixed warning message
+
 = 1.1.3 =
 * Updated plugin description
 
