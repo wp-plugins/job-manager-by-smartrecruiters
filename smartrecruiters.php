@@ -3,7 +3,7 @@
 Plugin Name: Job Manager by SmartRecruiters
 Plugin URI: http://dev.smartrecruiters.com
 Description: The easiest way to post jobs and manage candidates in a WordPress site. Connects with SmartRecruiters, your workspace to find and hire great people.
-Version: 1.1.4
+Version: 1.1.5
 Author: SmartRecruiters
 Author URI: http://smartrecruiters.com
 License: MIT
@@ -15,6 +15,18 @@ if(is_admin()){
 
 function get_jobs($params = '', $guid, $slug){
 	
+	class SrCountry {
+		public $text;
+		public $iso;
+		public function __construct($text, $iso) {
+			$this->text = $text;
+			$this->iso = $iso;
+		}
+		
+		public function __toString() {
+			return $this->text;
+		}
+	}
 
 	// company name taken from the WP database
 	$company_name = get_option('srcompany');
@@ -26,10 +38,20 @@ function get_jobs($params = '', $guid, $slug){
 	$get_jobs = @file_get_contents($url); // @ is switching off error reporting
 	
 	$xml = @simplexml_load_string($get_jobs, 'SimpleXMLElement', LIBXML_NOCDATA);
-	
+
 	//konwertujemy to na jakis sensowny obiekt
 	$jobs = json_decode(json_encode($xml), true);
 	
+	//add iso informations to countries (lost after json_encode)	
+	if ($xml->jobs->job && $jobs["jobs"]['job']) {
+		for ($i = 0; $i < count($jobs["jobs"]['job']); $i++) {
+			$country = $xml->jobs->job[$i]->{"job-location"}->country;
+
+			$iso = (string)$country->attributes()["iso"];
+			$countryName = (string)$country;
+			$jobs["jobs"]['job'][$i]["job-location"]["country"] = new SrCountry($countryName, $iso);
+		}	
+	}
 	
 	//trzeba wziac pod uwage parametry takei jak location i departments
 	$locations = array();

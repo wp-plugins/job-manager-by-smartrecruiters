@@ -53,7 +53,17 @@
 
                             <?php if(isset($job['job-location']['city']) && $job['job-location']['city']): ?>
                                 <ul class="smartrecruitersJobListDetails">
-                                    <li class="smartrecruitersJobListDetailsElement"><?php echo $job['job-location']['city']; ?></li>
+                                    <li class="smartrecruitersJobListDetailsElement"><?php 
+										echo $job['job-location']['city']; 
+										
+										if(isset($job['job-location']['country']) && $job['job-location']['country'] && $job['job-location']['country']->iso ) {
+											if (isset($job['job-location']['region']) && $job['job-location']['region'] && $job['job-location']['country']->iso == "US") {
+											 	echo ', '.$job['job-location']['region'];
+											} else {
+												echo ', '.$job['job-location']['country'];
+											}
+										} 
+									?></li>
                                 </ul>
                             <?php endif; ?>
 
