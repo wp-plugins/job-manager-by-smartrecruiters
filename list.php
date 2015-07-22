@@ -17,6 +17,22 @@
                 return $url.$code;
             }
         }
+		
+		if(!function_exists('print_job_location')) {
+			function print_job_location($location) {
+				echo $location['city']; 
+				if(isset($location['country']) && $location['country'] && $location['country']->iso ) {
+					if (isset($location['region']) && $location['region'] && $location['country']->iso == "US") {
+						echo ', '.$location['region'];
+					} else {
+						echo ', '.$location['country'];
+					}
+					 
+				}
+				
+					
+			}
+		}
     ?>
 
 	<!-- SmartRecruiters Jobs List -->
@@ -31,7 +47,11 @@
 								
 				<?php if(isset($jobs['jobs']['job']['job-location']['city']) && $jobs['jobs']['job']['job-location']['city']): ?>
 					<ul class="smartrecruitersJobListDetails">
-						<li class="smartrecruitersJobListDetailsElement"><?php echo $jobs['jobs']['job']['job-location']['city']; ?></li>
+						<li class="smartrecruitersJobListDetailsElement">
+							<?php 
+								print_job_location($jobs['jobs']['job']['job-location']);
+							?>
+						</li>
 					</ul>
 				<?php endif; ?>
 			
@@ -54,15 +74,7 @@
                             <?php if(isset($job['job-location']['city']) && $job['job-location']['city']): ?>
                                 <ul class="smartrecruitersJobListDetails">
                                     <li class="smartrecruitersJobListDetailsElement"><?php 
-										echo $job['job-location']['city']; 
-										
-										if(isset($job['job-location']['country']) && $job['job-location']['country'] && $job['job-location']['country']->iso ) {
-											if (isset($job['job-location']['region']) && $job['job-location']['region'] && $job['job-location']['country']->iso == "US") {
-											 	echo ', '.$job['job-location']['region'];
-											} else {
-												echo ', '.$job['job-location']['country'];
-											}
-										} 
+										print_job_location($job['job-location']);
 									?></li>
                                 </ul>
                             <?php endif; ?>

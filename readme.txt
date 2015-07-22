@@ -79,6 +79,9 @@ If you have any questions or issues please visit our [support forum](http://gets
 
 == Changelog ==
 
+= 1.1.6 =
+* Improve displaying single job list
+
 = 1.1.5 =
 * Improve location display (state for US location, country for others)
 
